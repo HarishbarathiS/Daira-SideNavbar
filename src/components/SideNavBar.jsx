@@ -14,7 +14,7 @@ export default function SideNavBar({ children }) {
 
   const userDetails = {
     name: "User1",
-    email: "u1@gmail.com",
+    email: "u@gmail.com",
   };
 
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ export default function SideNavBar({ children }) {
             <img src={logo} alt="" className="w-10" />
             <h1
               className={`text-2xl pl-2 font-semibold overflow-hidden transform  transition-transform ${
-                expand ? "w-20" : "w-0"
+                expand ? "w-32" : "w-0"
               }`}
             >
               Daira
@@ -55,10 +55,10 @@ export default function SideNavBar({ children }) {
           </div>
 
           <SideNavBarContext.Provider value={expand}>
-            <ul className="flex flex-col justify-center flex-1 p-1 ">
+            <ul className="flex flex-col justify-center flex-1 px-2">
               {children}
             </ul>
-            <div className="p-1 justify-center">
+            <div className="p-2 justify-center">
               <SideNavBarItem
                 icon={<IoSettingsOutline className="text-grey" size={22} />}
                 text="Settings"
@@ -79,15 +79,15 @@ export default function SideNavBar({ children }) {
               src={profile}
               onClick={handleClick}
               alt=""
-              className="w-10 h-10 ml-1 rounded-full"
+              className="w-10 h-10 ml-3 rounded-full"
             />
 
             <div
-              className={`flex pl- items-center overflow-hidden transform  transition-all ${
-                expand ? "w-20 ml-3" : "w-0"
+              className={`flex  items-center overflow-hidden transform  transition-all ${
+                expand ? "w-32 ml-3" : "w-0"
               } `}
             >
-              <div className="leading-4">
+              <div className="leading-5">
                 <h4 className="font-semibold">{userDetails.name}</h4>
                 <span className="font-semibold text-xs text-gray-600">
                   {userDetails.email}
@@ -108,7 +108,7 @@ export function SideNavBarItem({ icon, text, active, route }) {
   return (
     <li
       onClick={() => navigate(route)}
-      className={`relative flex items-center py-4 pl-6 my-1 font-medium rounded-md cursor-pointer transition-colors group ${
+      className={`relative flex items-center py-4 pl-6 my-1 pr-2 font-medium rounded-md cursor-pointer transition-colors group ${
         active
           ? "bg-gradient-to-tr from-[#F2C94C] to-[#F2994A] text-[#333333] "
           : "hover:bg-[#F2994A] hover:text-[#333333] text-gray-600"
